@@ -9,35 +9,19 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-image: url('images/welcomecake.jpeg'); /* Path to your image */
-            background-size: cover;                           /* Make sure the image covers the entire screen */
-            background-position: center center;               /* Center the image */
-            background-attachment: fixed;                     /* Keep the background fixed while scrolling */
-            height: 100vh;                                    /* Full viewport height */
-            margin: 0;                                        /* Remove default margin */
-            color: white;                                     /* Text color for contrast */
+            background-color: #fff3e6;
+            margin: 0;
+            padding: 0;
         }
         h1 {
-            color: #d2691e;  /* Orange color for header */
+            color: #d2691e;
+            font-size: 3em;
+            font-family: 'Georgia', serif;
         }
         .container {
             max-width: 800px;
             margin: auto;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.7); /* Add transparency to background */
-            border-radius: 10px;                    /* Rounded corners for the container */
-        }
-        .animation p {
-            color: #d2691e;  /* Warm brown color for the message */
-            font-size: 1.5em;  /* Optional: Adjust font size */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  /* Optional: Adds shadow for better contrast */
-        }
-        .animation {
-            animation: fadeIn 3s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
         }
         .nav a {
             margin: 0 15px;
@@ -45,31 +29,71 @@
             color: #d2691e;
             font-weight: bold;
         }
-        .footer-note {
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        .carousel {
+            display: flex;
+            animation: scrollRight 8s linear infinite;
+        }
+        .carousel img {
+            width: 300px;
+            height: 200px;
+            margin: 0 10px;
+            border-radius: 10px;
+        }
+        @keyframes scrollRight {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .welcome-text {
+            font-size: 1.5em;
+            color: #d2691e;
+            margin-top: 20px;
+        }
+        .footer {
             margin-top: 30px;
             font-size: 1.2em;
-            color: #d2691e;
-            text-shadow: none;  /* Remove shadow for footer */
+            font-weight: bold;
+            color: #a52a2a;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to Cakestry Studio</h1>
+        <h1>Cakestry Studio</h1>
         <nav class="nav">
             <a href="about.html">About Us</a>
             <a href="menu.html">Menu</a>
             <a href="contact.html">Contact</a>
         </nav>
-        <div class="animation">
+        
+        <div class="welcome-text">
             <p>A warm welcome from Cakestry Studio!</p>
-            <p>Delicious homemade fresh cakes</p>
+            <p>We bake Delicious homemade fresh cakes</p>
         </div>
-    </div>
 
-    <!-- Footer Note for main page -->
-    <div class="footer-note">
-        <p>Kindly place your order 2 days in advance.</p>
+        <div class="carousel-container">
+            <div class="carousel">
+                <img src="placeholder1.jpg" alt="Cake 1">
+                <img src="placeholder2.jpg" alt="Cake 2">
+                <img src="placeholder3.jpg" alt="Cake 3">
+                <img src="placeholder4.jpg" alt="Cake 4">
+                <img src="placeholder5.jpg" alt="Cake 5">
+                <img src="placeholder6.jpg" alt="Cake 6">
+                <img src="placeholder7.jpg" alt="Cake 7">
+                <img src="placeholder8.jpg" alt="Cake 8">
+                <img src="placeholder9.jpg" alt="Cake 9">
+                <img src="placeholder10.jpg" alt="Cake 10">
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Kindly place your order 2 days in advance.</p>
+        </div>
     </div>
 </body>
 </html>
