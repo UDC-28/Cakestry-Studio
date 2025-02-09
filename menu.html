@@ -26,14 +26,17 @@
             color: #8b0000;
             margin-top: 20px;
         }
+        .menu-items p {
+            margin: 5px 0;
+        }
         .back-home {
             margin-top: 20px;
-            font-size: 1.2em;
         }
         .back-home a {
             text-decoration: none;
             color: #d2691e;
             font-weight: bold;
+            font-size: 1.2em;
         }
     </style>
 </head>
@@ -49,5 +52,17 @@
         </div>
         <p class="back-home"><a href="index.html">← Back Home</a></p>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backHomeLink = document.querySelector('.back-home a');
+
+            // Ensure the Back Home link works as intended
+            backHomeLink.addEventListener("click", function (event) {
+                event.preventDefault();
+                window.location.href = "index.html";
+            });
+        });
+    </script>
 </body>
 </html>
