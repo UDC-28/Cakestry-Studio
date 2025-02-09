@@ -1,33 +1,62 @@
 
     <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Cakestry Studio</title>
-        <style>
-            body { font-family: Arial, sans-serif; text-align: center; background-color: #fff3e6; }
-            h1 { color: #d2691e; }
-            .container { max-width: 800px; margin: auto; padding: 20px; }
-            .animation img { width: 200px; }
-            .animation { animation: fadeIn 3s ease-in-out; }
-            @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-            .nav a { margin: 0 15px; text-decoration: none; color: #d2691e; font-weight: bold; }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <h1>Welcome to Cakestry Studio</h1>
-            <nav class="nav">
-                <a href="about.html">About Us</a>
-                <a href="menu.html">Menu</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-            <div class="animation">
-                <img src="welcomecake.jpeg" alt="welcomecake">
-                <p>A warm welcome from Cakestry Studio!</p>
-            </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cakestry Studio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-image: url('images/welcomecake.jpeg'); /* Path to your image */
+            background-size: cover;                           /* Make sure the image covers the entire screen */
+            background-position: center center;               /* Center the image */
+            background-attachment: fixed;                     /* Keep the background fixed while scrolling */
+            height: 100vh;                                    /* Full viewport height */
+            margin: 0;                                        /* Remove default margin */
+            color: white;                                     /* Text color for contrast */
+        }
+        h1 {
+            color: #d2691e;  /* Orange color for header */
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.7); /* Add transparency to background */
+            border-radius: 10px;                    /* Rounded corners for the container */
+        }
+        .animation img {
+            width: 200px;
+        }
+        .animation {
+            animation: fadeIn 3s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #d2691e;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Cakestry Studio</h1>
+        <nav class="nav">
+            <a href="about.html">About Us</a>
+            <a href="menu.html">Menu</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="animation">
+            <p>A warm welcome from Cakestry Studio!</p>
         </div>
-    </body>
-    </html>
+    </div>
+</body>
+</html>
     
