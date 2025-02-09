@@ -12,94 +12,119 @@
             background-color: #fff3e6;
             margin: 0;
             padding: 0;
-    background-image: url('images/cake1.jpg'); /* Path to your image */
-    background-size: cover;  /* Ensures the image covers the entire page */
-    background-position: center;  /* Centers the background image */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    height: 100vh; /* Ensures the background takes the full viewport height */
-    margin: 0; /* Removes default margin */
         }
         h1 {
             color: #d2691e;
-            font-size: 3em;
-            font-family: 'Georgia', serif;
         }
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: auto;
             padding: 20px;
         }
-        .nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #d2691e;
-            font-weight: bold;
-        }
-        .carousel-container {
-            position: relative;
+        .cake-slider {
             width: 100%;
             overflow: hidden;
-            margin-top: 20px;
+            position: relative;
+            margin: 20px auto;
         }
-        .carousel {
-            display: flex;
-            animation: scrollRight 8s linear infinite;
-        }
-        .carousel img {
-            width: 300px;
-            height: 200px;
-            margin: 0 10px;
+        .cake-slider img {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
             border-radius: 10px;
+            display: block;
+            margin: auto;
         }
-        @keyframes scrollRight {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
+        .cake-slider .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
         }
-        .welcome-text {
-            font-size: 1.5em;
-            color: #d2691e;
-            margin-top: 20px;
+        .cake-slider .slide {
+            min-width: 100%;
+            box-sizing: border-box;
         }
-        .footer {
-            margin-top: 30px;
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #a52a2a;
+        .slider-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .slider-buttons button {
+            background-color: #d2691e;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        .slider-buttons button:hover {
+            background-color: #a0522d;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Cakestry Studio</h1>
-        <nav class="nav">
-            <a href="about.html">About Us</a>
-            <a href="menu.html">Menu</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-        
-        <div class="welcome-text">
-            <p>A warm welcome from Cakestry Studio!</p>
-            <p>We bake Delicious homemade fresh cakes</p>
-        </div>
+        <p class="description">We bake happiness with every cake! Our passion is to bring sweetness to your special moments. Made with love and the finest ingredients.</p>
+        <p class="highlight">We bake delicious homemade fresh cakes.</p>
 
-        <div class="carousel-container">
-            <div class="carousel">
-                <img src="placeholder1.jpg" alt="Cake 1">
-                <img src="placeholder2.jpg" alt="Cake 2">
-                <img src="placeholder3.jpg" alt="Cake 3">
-                <img src="placeholder4.jpg" alt="Cake 4">
-                <img src="placeholder5.jpg" alt="Cake 5">
-                <img src="placeholder6.jpg" alt="Cake 6">
-                <img src="placeholder7.jpg" alt="Cake 7">
-                <img src="placeholder8.jpg" alt="Cake 8">
-                <img src="placeholder9.jpg" alt="Cake 9">
-                <img src="placeholder10.jpg" alt="Cake 10">
+        <!-- Cake Image Slider -->
+        <div class="cake-slider">
+            <div class="slides">
+                <div class="slide"><img src="images/cake1.jpeg" alt="Cake 1"></div>
+                <div class="slide"><img src="images/cake2.jpeg" alt="Cake 2"></div>
+                <div class="slide"><img src="images/cake3.jpeg" alt="Cake 3"></div>
+                <div class="slide"><img src="images/cake4.jpeg" alt="Cake 4"></div>
+                <div class="slide"><img src="images/cake5.jpeg" alt="Cake 5"></div>
+                <div class="slide"><img src="images/cake6.jpeg" alt="Cake 6"></div>
+                <div class="slide"><img src="images/cake7.jpeg" alt="Cake 7"></div>
+                <div class="slide"><img src="images/cake8.jpeg" alt="Cake 8"></div>
+                <div class="slide"><img src="images/cake9.jpeg" alt="Cake 9"></div>
+                <div class="slide"><img src="images/cake10.jpeg" alt="Cake 10"></div>
+                <div class="slide"><img src="images/cake11.jpeg" alt="Cake 11"></div>
+                <div class="slide"><img src="images/cake12.jpeg" alt="Cake 12"></div>
+                <div class="slide"><img src="images/cake13.jpeg" alt="Cake 13"></div>
+                <div class="slide"><img src="images/cake14.jpeg" alt="Cake 14"></div>
+                <div class="slide"><img src="images/cake15.jpeg" alt="Cake 15"></div>
             </div>
         </div>
 
-        <div class="footer">
-            <p>Kindly place your order 2 days in advance.</p>
+        <!-- Slider Navigation Buttons -->
+        <div class="slider-buttons">
+            <button id="prev">❮ Prev</button>
+            <button id="next">Next ❯</button>
         </div>
+
+        <p class="order-note"><strong>Kindly place your order 2 days in advance.</strong></p>
     </div>
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelector('.slides');
+        const totalSlides = document.querySelectorAll('.slide').length;
+
+        document.getElementById('next').addEventListener('click', function () {
+            if (currentIndex < totalSlides - 1) {
+                currentIndex++;
+            } else {
+                currentIndex = 0; // Loop back to first image
+            }
+            updateSlider();
+        });
+
+        document.getElementById('prev').addEventListener('click', function () {
+            if (currentIndex > 0) {
+                currentIndex--;
+            } else {
+                currentIndex = totalSlides - 1; // Loop back to last image
+            }
+            updateSlider();
+        });
+
+        function updateSlider() {
+            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+    </script>
 </body>
 </html>
