@@ -26,7 +26,19 @@
             padding: 20px;
         }
 
-        h1, .welcome-message, .message {
+        /* Heading Styles - Larger and More Prominent */
+        h1 {
+            color: #8b0000;
+            font-size: 3em; /* Larger font size */
+            font-weight: bold;
+            margin-top: 40px;
+            background: rgba(255, 243, 230, 0.6); /* Soft transparent background */
+            display: inline-block;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .welcome-message, .message {
             color: #8b0000;
             font-size: 2em;
             margin-top: 20px;
@@ -56,7 +68,7 @@
         .gallery {
             display: flex;
             width: max-content;
-            animation: scroll 15s linear infinite;
+            animation: scroll 30s linear infinite; /* Slower scrolling */
         }
 
         /* Smaller images */
@@ -94,7 +106,7 @@
         /* Media Queries for responsiveness */
         @media (max-width: 1600px) {
             h1, .welcome-message, .message {
-                font-size: 1.8em;
+                font-size: 2.5em; /* Slightly smaller on medium screens */
             }
 
             .nav a {
@@ -104,7 +116,7 @@
 
         @media (max-width: 1200px) {
             h1, .welcome-message, .message {
-                font-size: 1.6em;
+                font-size: 2.2em; /* Slightly smaller on smaller screens */
             }
 
             .nav a {
@@ -114,7 +126,7 @@
 
         @media (max-width: 992px) {
             h1, .welcome-message, .message {
-                font-size: 1.4em;
+                font-size: 2em; /* Slightly smaller */
                 padding: 8px;
             }
 
@@ -125,7 +137,7 @@
 
         @media (max-width: 768px) {
             h1, .welcome-message, .message {
-                font-size: 1.3em;
+                font-size: 1.6em;
                 padding: 6px;
             }
 
@@ -137,7 +149,7 @@
 
         @media (max-width: 576px) {
             h1, .welcome-message, .message {
-                font-size: 1.2em;
+                font-size: 1.4em;
                 padding: 6px;
             }
 
@@ -149,7 +161,7 @@
 
         @media (max-width: 480px) {
             h1, .welcome-message, .message {
-                font-size: 1em;
+                font-size: 1.2em;
                 padding: 5px;
             }
 
