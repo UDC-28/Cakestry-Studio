@@ -52,26 +52,25 @@
             margin: 20px auto;
         }
 
-        /* Smooth Scrolling Gallery */
+        /* Gallery Scrolling */
         .gallery {
             display: flex;
             flex-wrap: nowrap;
-            width: 100%;
+            width: max-content;
             animation: scroll 15s linear infinite;
             justify-content: center;
         }
 
         .gallery img {
-            width: 200px;
-            height: 200px;
-            margin: 10px;
-            border-radius: 10px;
+            width: 100vw; /* Full screen width for each image */
+            height: auto;
+            display: block;
         }
 
-        /* Smooth continuous scrolling */
+        /* Continuous smooth scroll animation */
         @keyframes scroll {
             0% { transform: translateX(0); }
-            100% { transform: translateX(-3000px); }
+            100% { transform: translateX(-100%); }
         }
 
         /* Footer note */
@@ -101,11 +100,6 @@
             .nav a {
                 font-size: 1.1em;
             }
-
-            .gallery img {
-                width: 180px;
-                height: 180px;
-            }
         }
 
         @media (max-width: 1200px) {
@@ -115,11 +109,6 @@
 
             .nav a {
                 font-size: 1em;
-            }
-
-            .gallery img {
-                width: 170px;
-                height: 170px;
             }
         }
 
@@ -131,12 +120,6 @@
 
             .nav a {
                 font-size: 1em;
-                margin: 0 10px;
-            }
-
-            .gallery img {
-                width: 160px;
-                height: 160px;
             }
         }
 
@@ -150,16 +133,6 @@
                 font-size: 0.9em;
                 margin: 0 5px;
             }
-
-            .gallery img {
-                width: 150px;
-                height: 150px;
-            }
-
-            .gallery {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
         }
 
         @media (max-width: 576px) {
@@ -172,16 +145,6 @@
                 font-size: 0.8em;
                 margin: 0 5px;
             }
-
-            .gallery img {
-                width: 130px;
-                height: 130px;
-            }
-
-            .note {
-                font-size: 0.8em;
-                padding: 6px;
-            }
         }
 
         @media (max-width: 480px) {
@@ -193,16 +156,6 @@
             .nav a {
                 font-size: 0.8em;
                 margin: 0 5px;
-            }
-
-            .gallery img {
-                width: 120px;
-                height: 120px;
-            }
-
-            .note {
-                font-size: 0.7em;
-                padding: 5px;
             }
         }
     </style>
@@ -223,23 +176,6 @@
         <div class="gallery-container">
             <div class="gallery">
                 <!-- Duplicating images for smooth scrolling -->
-                <img src="images/cake 1.jpg" alt="Cake 1">
-                <img src="images/cake 2.jpg" alt="Cake 2">
-                <img src="images/cake 3.jpg" alt="Cake 3">
-                <img src="images/cake 4.jpg" alt="Cake 4">
-                <img src="images/cake 5.jpg" alt="Cake 5">
-                <img src="images/cake 6.jpg" alt="Cake 6">
-                <img src="images/cake 7.jpg" alt="Cake 7">
-                <img src="images/cake 8.jpg" alt="Cake 8">
-                <img src="images/cake 9.jpg" alt="Cake 9">
-                <img src="images/cake 10.jpg" alt="Cake 10">
-                <img src="images/cake 11.jpg" alt="Cake 11">
-                <img src="images/cake 12.jpg" alt="Cake 12">
-                <img src="images/cake 13.jpg" alt="Cake 13">
-                <img src="images/cake 14.jpg" alt="Cake 14">
-                <img src="images/cake 15.jpg" alt="Cake 15">
-
-                <!-- Repeating images for seamless looping -->
                 <img src="images/cake 1.jpg" alt="Cake 1">
                 <img src="images/cake 2.jpg" alt="Cake 2">
                 <img src="images/cake 3.jpg" alt="Cake 3">
