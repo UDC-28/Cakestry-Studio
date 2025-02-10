@@ -14,11 +14,11 @@
             background: url('images/welcomecake.jpeg') no-repeat center center fixed;
             background-size: cover;
         }
-        h1 {
-            color: #d2691e;
-            font-size: 2.5em;
+        h1, .welcome-message, .message, .note {
+            color: #8b0000;
+            font-size: 2em;
             margin-top: 20px;
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 243, 230, 0.4); /* Soft transparent background */
             display: inline-block;
             padding: 10px;
             border-radius: 10px;
@@ -27,8 +27,6 @@
             max-width: 900px;
             margin: auto;
             padding: 20px;
-            background: rgba(255, 243, 230, 0.9);
-            border-radius: 10px;
         }
         .nav a {
             margin: 0 15px;
@@ -36,24 +34,6 @@
             color: #d2691e;
             font-weight: bold;
             font-size: 1.2em;
-        }
-        .welcome-message {
-            font-size: 1.7em;
-            color: #8b0000;
-            margin-top: 20px;
-            background: rgba(255, 255, 255, 0.7);
-            display: inline-block;
-            padding: 10px;
-            border-radius: 10px;
-        }
-        .message {
-            font-size: 1.5em;
-            color: #8b0000;
-            margin-top: 10px;
-            background: rgba(255, 255, 255, 0.7);
-            display: inline-block;
-            padding: 10px;
-            border-radius: 10px;
         }
         /* Gallery container */
         .gallery-container {
@@ -65,7 +45,7 @@
         /* Smooth Scrolling Gallery */
         .gallery {
             display: flex;
-            width: calc(200px * 30); /* Double the number of images for a seamless loop */
+            width: calc(200px * 30);
             animation: scroll 15s linear infinite;
         }
         .gallery img {
@@ -77,17 +57,7 @@
         /* Smooth continuous scrolling */
         @keyframes scroll {
             0% { transform: translateX(0); }
-            100% { transform: translateX(-3000px); } /* Moves left smoothly */
-        }
-        .note {
-            font-size: 1.2em;
-            color: #d2691e;
-            margin-top: 30px;
-            font-weight: bold;
-            background: rgba(255, 255, 255, 0.7);
-            display: inline-block;
-            padding: 5px 10px;
-            border-radius: 10px;
+            100% { transform: translateX(-3000px); }
         }
     </style>
 </head>
@@ -101,9 +71,9 @@
         </nav>
         
         <p class="welcome-message">A warm welcome to Cakestry Studio</p>
-        <p class="message">We bake with Delicious homemade fresh cakes</p>
+        <p class="message">We bake delicious homemade fresh cakes</p>
 
-        <!-- Cake Gallery with Smooth Infinite Loop -->
+        <!-- Cake Gallery -->
         <div class="gallery-container">
             <div class="gallery">
                 <!-- Duplicating images for smooth scrolling -->
