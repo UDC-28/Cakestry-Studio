@@ -16,11 +16,12 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            overflow-x: hidden;
         }
 
         .container {
             flex-grow: 1;
-            max-width: 900px;
+            max-width: 100%;
             margin: auto;
             padding: 20px;
         }
@@ -29,7 +30,7 @@
             color: #8b0000;
             font-size: 2em;
             margin-top: 20px;
-            background: rgba(255, 243, 230, 0.4); /* Soft transparent background */
+            background: rgba(255, 243, 230, 0.6); /* Soft transparent background */
             display: inline-block;
             padding: 10px;
             border-radius: 10px;
@@ -54,8 +55,10 @@
         /* Smooth Scrolling Gallery */
         .gallery {
             display: flex;
-            width: calc(200px * 30);
+            flex-wrap: nowrap;
+            width: 100%;
             animation: scroll 15s linear infinite;
+            justify-content: center;
         }
 
         .gallery img {
@@ -75,7 +78,7 @@
         .note {
             font-size: 0.9em;
             color: #8b0000;
-            background: rgba(255, 243, 230, 0.4); /* Soft transparent background */
+            background: rgba(255, 243, 230, 0.6); /* Soft transparent background */
             padding: 8px;
             border-radius: 10px;
             text-align: center;
@@ -90,28 +93,37 @@
         }
 
         /* Media Queries for responsiveness */
-        @media (max-width: 1200px) {
+        @media (max-width: 1600px) {
             h1, .welcome-message, .message {
                 font-size: 1.8em;
             }
 
             .nav a {
-                font-size: 1em;
+                font-size: 1.1em;
             }
-        }
 
-        @media (max-width: 992px) {
             .gallery img {
                 width: 180px;
                 height: 180px;
             }
+        }
 
+        @media (max-width: 1200px) {
             h1, .welcome-message, .message {
                 font-size: 1.6em;
             }
+
+            .nav a {
+                font-size: 1em;
+            }
+
+            .gallery img {
+                width: 170px;
+                height: 170px;
+            }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
             h1, .welcome-message, .message {
                 font-size: 1.4em;
                 padding: 8px;
@@ -122,19 +134,15 @@
                 margin: 0 10px;
             }
 
-            .gallery {
-                width: calc(180px * 30);
-            }
-
             .gallery img {
-                width: 150px;
-                height: 150px;
+                width: 160px;
+                height: 160px;
             }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 768px) {
             h1, .welcome-message, .message {
-                font-size: 1.2em;
+                font-size: 1.3em;
                 padding: 6px;
             }
 
@@ -143,8 +151,26 @@
                 margin: 0 5px;
             }
 
+            .gallery img {
+                width: 150px;
+                height: 150px;
+            }
+
             .gallery {
-                width: calc(150px * 30);
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1, .welcome-message, .message {
+                font-size: 1.2em;
+                padding: 6px;
+            }
+
+            .nav a {
+                font-size: 0.8em;
+                margin: 0 5px;
             }
 
             .gallery img {
@@ -155,6 +181,28 @@
             .note {
                 font-size: 0.8em;
                 padding: 6px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1, .welcome-message, .message {
+                font-size: 1em;
+                padding: 5px;
+            }
+
+            .nav a {
+                font-size: 0.8em;
+                margin: 0 5px;
+            }
+
+            .gallery img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .note {
+                font-size: 0.7em;
+                padding: 5px;
             }
         }
     </style>
