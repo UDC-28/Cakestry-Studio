@@ -13,8 +13,17 @@
             padding: 0;
             background: url('images/welcomecake.jpeg') no-repeat center center fixed;
             background-size: cover;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
-        h1, .welcome-message, .message, .note {
+        .container {
+            flex-grow: 1;
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+        h1, .welcome-message, .message {
             color: #8b0000;
             font-size: 2em;
             margin-top: 20px;
@@ -22,11 +31,6 @@
             display: inline-block;
             padding: 10px;
             border-radius: 10px;
-        }
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
         }
         .nav a {
             margin: 0 15px;
@@ -59,6 +63,22 @@
             0% { transform: translateX(0); }
             100% { transform: translateX(-3000px); }
         }
+        /* Footer note */
+        .note {
+            font-size: 0.9em;
+            color: #8b0000;
+            background: rgba(255, 243, 230, 0.4); /* Soft transparent background */
+            padding: 8px;
+            border-radius: 10px;
+            text-align: center;
+            width: 100%;
+            position: relative;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            margin-top: auto;
+        }
     </style>
 </head>
 <body>
@@ -71,7 +91,7 @@
         </nav>
         
         <p class="welcome-message">A warm welcome to Cakestry Studio</p>
-        <p class="message">We bake delicious homemade fresh cakes</p>
+        <p class="message">We bake delicious homemade cakes</p>
 
         <!-- Cake Gallery -->
         <div class="gallery-container">
@@ -111,7 +131,9 @@
                 <img src="images/cake 15.jpg" alt="Cake 15">
             </div>
         </div>
+    </div>
 
+    <div class="footer">
         <p class="note">Kindly place your order 2 days in advance</p>
     </div>
 </body>
