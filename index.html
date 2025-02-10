@@ -17,12 +17,14 @@
             flex-direction: column;
             min-height: 100vh;
         }
+
         .container {
             flex-grow: 1;
             max-width: 900px;
             margin: auto;
             padding: 20px;
         }
+
         h1, .welcome-message, .message {
             color: #8b0000;
             font-size: 2em;
@@ -32,6 +34,7 @@
             padding: 10px;
             border-radius: 10px;
         }
+
         .nav a {
             margin: 0 15px;
             text-decoration: none;
@@ -39,6 +42,7 @@
             font-weight: bold;
             font-size: 1.2em;
         }
+
         /* Gallery container */
         .gallery-container {
             width: 100%;
@@ -46,23 +50,27 @@
             position: relative;
             margin: 20px auto;
         }
+
         /* Smooth Scrolling Gallery */
         .gallery {
             display: flex;
             width: calc(200px * 30);
             animation: scroll 15s linear infinite;
         }
+
         .gallery img {
             width: 200px;
             height: 200px;
             margin: 10px;
             border-radius: 10px;
         }
+
         /* Smooth continuous scrolling */
         @keyframes scroll {
             0% { transform: translateX(0); }
             100% { transform: translateX(-3000px); }
         }
+
         /* Footer note */
         .note {
             font-size: 0.9em;
@@ -74,10 +82,80 @@
             width: 100%;
             position: relative;
         }
+
         .footer {
             text-align: center;
             padding: 10px;
             margin-top: auto;
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 1200px) {
+            h1, .welcome-message, .message {
+                font-size: 1.8em;
+            }
+
+            .nav a {
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .gallery img {
+                width: 180px;
+                height: 180px;
+            }
+
+            h1, .welcome-message, .message {
+                font-size: 1.6em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1, .welcome-message, .message {
+                font-size: 1.4em;
+                padding: 8px;
+            }
+
+            .nav a {
+                font-size: 1em;
+                margin: 0 10px;
+            }
+
+            .gallery {
+                width: calc(180px * 30);
+            }
+
+            .gallery img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1, .welcome-message, .message {
+                font-size: 1.2em;
+                padding: 6px;
+            }
+
+            .nav a {
+                font-size: 0.9em;
+                margin: 0 5px;
+            }
+
+            .gallery {
+                width: calc(150px * 30);
+            }
+
+            .gallery img {
+                width: 130px;
+                height: 130px;
+            }
+
+            .note {
+                font-size: 0.8em;
+                padding: 6px;
+            }
         }
     </style>
 </head>
