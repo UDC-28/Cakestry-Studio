@@ -37,10 +37,19 @@
             font-weight: bold;
             font-size: 1.2em;
         }
+        .welcome-message {
+            font-size: 1.7em;
+            color: #8b0000;
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.7);
+            display: inline-block;
+            padding: 10px;
+            border-radius: 10px;
+        }
         .message {
             font-size: 1.5em;
             color: #8b0000;
-            margin-top: 20px;
+            margin-top: 10px;
             background: rgba(255, 255, 255, 0.7);
             display: inline-block;
             padding: 10px;
@@ -53,10 +62,10 @@
             position: relative;
             margin: 20px auto;
         }
-        /* Gallery wrapper */
+        /* Smooth Scrolling Gallery */
         .gallery {
             display: flex;
-            width: calc(200px * 15); /* Adjust width based on number of images */
+            width: calc(200px * 30); /* Double the number of images for a seamless loop */
             animation: scroll 15s linear infinite;
         }
         .gallery img {
@@ -65,9 +74,10 @@
             margin: 10px;
             border-radius: 10px;
         }
+        /* Smooth continuous scrolling */
         @keyframes scroll {
             0% { transform: translateX(0); }
-            100% { transform: translateX(-2000px); } /* Moves all images left continuously */
+            100% { transform: translateX(-3000px); } /* Moves left smoothly */
         }
         .note {
             font-size: 1.2em;
@@ -90,11 +100,30 @@
             <a href="contact.html">Contact</a>
         </nav>
         
-        <p class="message">We Bake Delicious Homemade Cakes</p>
+        <p class="welcome-message">A warm welcome to Cakestry Studio</p>
+        <p class="message">We bake with Delicious homemade fresh cakes</p>
 
-        <!-- Cake Gallery with Infinite Loop -->
+        <!-- Cake Gallery with Smooth Infinite Loop -->
         <div class="gallery-container">
             <div class="gallery">
+                <!-- Duplicating images for smooth scrolling -->
+                <img src="images/cake 1.jpg" alt="Cake 1">
+                <img src="images/cake 2.jpg" alt="Cake 2">
+                <img src="images/cake 3.jpg" alt="Cake 3">
+                <img src="images/cake 4.jpg" alt="Cake 4">
+                <img src="images/cake 5.jpg" alt="Cake 5">
+                <img src="images/cake 6.jpg" alt="Cake 6">
+                <img src="images/cake 7.jpg" alt="Cake 7">
+                <img src="images/cake 8.jpg" alt="Cake 8">
+                <img src="images/cake 9.jpg" alt="Cake 9">
+                <img src="images/cake 10.jpg" alt="Cake 10">
+                <img src="images/cake 11.jpg" alt="Cake 11">
+                <img src="images/cake 12.jpg" alt="Cake 12">
+                <img src="images/cake 13.jpg" alt="Cake 13">
+                <img src="images/cake 14.jpg" alt="Cake 14">
+                <img src="images/cake 15.jpg" alt="Cake 15">
+
+                <!-- Repeating images for seamless looping -->
                 <img src="images/cake 1.jpg" alt="Cake 1">
                 <img src="images/cake 2.jpg" alt="Cake 2">
                 <img src="images/cake 3.jpg" alt="Cake 3">
