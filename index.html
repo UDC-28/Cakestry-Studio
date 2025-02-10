@@ -15,116 +15,88 @@
         }
         h1 {
             color: #d2691e;
+            font-size: 2.5em;
+            margin-top: 20px;
         }
         .container {
             max-width: 900px;
             margin: auto;
             padding: 20px;
         }
-        .cake-slider {
-            width: 100%;
+        .nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #d2691e;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .message {
+            font-size: 1.5em;
+            color: #8b0000;
+            margin-top: 20px;
+        }
+        .gallery-container {
             overflow: hidden;
-            position: relative;
+            white-space: nowrap;
+            width: 100%;
             margin: 20px auto;
         }
-        .cake-slider img {
-            width: 100%;
-            max-width: 250px;
-            height: auto;
+        .gallery {
+            display: inline-block;
+            white-space: nowrap;
+            animation: scroll 15s linear infinite;
+        }
+        .gallery img {
+            width: 200px;
+            height: 200px;
+            margin: 10px;
             border-radius: 10px;
-            display: block;
-            margin: auto;
         }
-        .cake-slider .slides {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
+        @keyframes scroll {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
         }
-        .cake-slider .slide {
-            min-width: 100%;
-            box-sizing: border-box;
-        }
-        .slider-buttons {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
-        }
-        .slider-buttons button {
-            background-color: #d2691e;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            margin: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            border-radius: 5px;
-        }
-        .slider-buttons button:hover {
-            background-color: #a0522d;
+        .note {
+            font-size: 1.2em;
+            color: #d2691e;
+            margin-top: 30px;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Cakestry Studio</h1>
-        <p class="description">We bake happiness with every cake! Our passion is to bring sweetness to your special moments. Made with love and the finest ingredients.</p>
-        <p class="highlight">We bake delicious homemade fresh cakes.</p>
+        <nav class="nav">
+            <a href="about.html">About Us</a>
+            <a href="menu.html">Menu</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        
+        <p class="message">We bake with Delicious homemade fresh cakes</p>
 
-        <!-- Cake Image Slider -->
-        <div class="cake-slider">
-            <div class="slides">
-                <div class="slide"><img src="images/cake1.jpeg" alt="Cake 1"></div>
-                <div class="slide"><img src="images/cake2.jpeg" alt="Cake 2"></div>
-                <div class="slide"><img src="images/cake3.jpeg" alt="Cake 3"></div>
-                <div class="slide"><img src="images/cake4.jpeg" alt="Cake 4"></div>
-                <div class="slide"><img src="images/cake5.jpeg" alt="Cake 5"></div>
-                <div class="slide"><img src="images/cake6.jpeg" alt="Cake 6"></div>
-                <div class="slide"><img src="images/cake7.jpeg" alt="Cake 7"></div>
-                <div class="slide"><img src="images/cake8.jpeg" alt="Cake 8"></div>
-                <div class="slide"><img src="images/cake9.jpeg" alt="Cake 9"></div>
-                <div class="slide"><img src="images/cake10.jpeg" alt="Cake 10"></div>
-                <div class="slide"><img src="images/cake11.jpeg" alt="Cake 11"></div>
-                <div class="slide"><img src="images/cake12.jpeg" alt="Cake 12"></div>
-                <div class="slide"><img src="images/cake13.jpeg" alt="Cake 13"></div>
-                <div class="slide"><img src="images/cake14.jpeg" alt="Cake 14"></div>
-                <div class="slide"><img src="images/cake15.jpeg" alt="Cake 15"></div>
+        <!-- Cake Gallery -->
+        <div class="gallery-container">
+            <div class="gallery">
+                <img src="cake1.jpg" alt="Cake 1">
+                <img src="cake2.jpg" alt="Cake 2">
+                <img src="cake3.jpg" alt="Cake 3">
+                <img src="cake4.jpg" alt="Cake 4">
+                <img src="cake5.jpg" alt="Cake 5">
+                <img src="cake6.jpg" alt="Cake 6">
+                <img src="cake7.jpg" alt="Cake 7">
+                <img src="cake8.jpg" alt="Cake 8">
+                <img src="cake9.jpg" alt="Cake 9">
+                <img src="cake10.jpg" alt="Cake 10">
+                <img src="cake11.jpg" alt="Cake 11">
+                <img src="cake12.jpg" alt="Cake 12">
+                <img src="cake13.jpg" alt="Cake 13">
+                <img src="cake14.jpg" alt="Cake 14">
+                <img src="cake15.jpg" alt="Cake 15">
             </div>
         </div>
 
-        <!-- Slider Navigation Buttons -->
-        <div class="slider-buttons">
-            <button id="prev">❮ Prev</button>
-            <button id="next">Next ❯</button>
-        </div>
-
-        <p class="order-note"><strong>Kindly place your order 2 days in advance.</strong></p>
+        <p class="note">Kindly place your order 2 days in advance</p>
     </div>
-
-    <script>
-        let currentIndex = 0;
-        const slides = document.querySelector('.slides');
-        const totalSlides = document.querySelectorAll('.slide').length;
-
-        document.getElementById('next').addEventListener('click', function () {
-            if (currentIndex < totalSlides - 1) {
-                currentIndex++;
-            } else {
-                currentIndex = 0; // Loop back to first image
-            }
-            updateSlider();
-        });
-
-        document.getElementById('prev').addEventListener('click', function () {
-            if (currentIndex > 0) {
-                currentIndex--;
-            } else {
-                currentIndex = totalSlides - 1; // Loop back to last image
-            }
-            updateSlider();
-        });
-
-        function updateSlider() {
-            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-        }
-    </script>
 </body>
 </html>
